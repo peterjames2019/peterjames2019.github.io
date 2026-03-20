@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS to match the image spacing */
+        #about {
+            padding: 60px 0;
+        }
+        .about-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%; /* This is the key change to make it a circle */
+        }
+        #projects {
+                padding: 80px 0;
+                background-color: #f2f2f2; /* Light grey background for the section */
+            }
+            .card {
+                border: 1px solid #ddd; /* Adds the subtle border seen in your image */
+                border-radius: 10px;    /* Slightly rounded corners for the card itself */
+                overflow: hidden;       /* Ensures the image doesn't pop out of the rounded corners */
+                background-color: #fff; /* Makes the card white */
+                text-align: left;       /* Aligns text to the left like the image */
+            }
+            .project-card-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 1px solid #ddd; /* Separates image from text */
+            }
+            .project-links {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        #skills {
+            padding: 80px 0;
+            background-color: #fff; /* Matches the grey from the project section */
+        }
+        .skill-icon {
+            width: 120px; /* Adjust size to match the mockup */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .skill-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: #0d6efd; /* Bootstrap primary blue */
+        }
+        .skill-link:hover {
+            text-decoration: underline;
+        }
+        #contact {
+            padding: 80px 0;
+            background-color: #000000; /* Solid black background */
+            color: #ffffff; /* White text for contrast */
+        }
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .social-link-item {
+            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .social-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #d63384; /* Pink color from your mockup */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+            transition: transform 0.3s ease;
+        }
+        .social-circle img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        .social-circle:hover {
+            transform: scale(1.1); /* Slight zoom effect when hovering */
+        }
+        .contact-info img {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        /* This makes the whole page scroll smoothly */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Adds a little space at the top of sections so the navbar 
+           doesn't cover the titles when you scroll to them */
+        section {
+            scroll-margin-top: 70px;
+        }
+
+        .navbar {
+            /* This hex code #343a40 is a "Soft Charcoal" - dark but not black */
+            background-color: #343a40 !important; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-weight: 500;
+        }
+
+        /* This ensures the links turn slightly brighter when you hover over them */
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-4">About</h2>
+
+            <div class="mb-4">
+                <img src="images/about/1.jpg" alt="Profile Picture" class="about-img bg-secondary">
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="lead text-muted">
+                        I am a results-driven Data Analyst and Engineer with a passion for transforming complex datasets into actionable business intelligence. With a strong foundation in Python, SQL, and Machine Learning, I specialize in uncovering hidden patterns in consumer behavior and operational workflows.
+                    </p>
+                    <p class="lead text-muted">
+                        Beyond the code, I bridge the gap between technical complexity and stakeholder needs. I thrive on building interactive visualizations in Tableau and Power BI that allow businesses to track KPIs and identify growth opportunities in real-time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-center mb-5">Projects</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/projects/1.jpg" class="project-card-img bg-dark" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-dark">Automotive Sales Performance Audit</h5>
+                            <p class="text-muted small">This project is a comprehensive end-to-end audit of over 1 million automotive sales records. The goal was to identify lifetime value, salesperson consistency, and regional revenue trends using a robust data pipeline.</p>
+                            
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="https://github.com/peterjames2019/Automotive-Sales-Performance-Audit" class="btn btn-primary btn-sm px-3">Blog Post</a>
+                                <a href="https://github.com/peterjames2019/Automotive-Sales-Performance-Audit/tree/main/Project%20SQL" class="btn btn-secondary btn-sm px-3">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/projects/2.jpg" class="project-card-img bg-dark" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-dark">Customer Churn Analysis</h5>
+                            <p class="text-muted small">Customer Attrition Prediction | Machine Learning Built an end-to-end ML pipeline in Python to predict subscriber churn with 79% accuracy.</p>
+                            
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="https://github.com/peterjames2019/Customer-Churn-Analysis" class="btn btn-primary btn-sm px-3">Blog Post</a>
+                                <a href="https://github.com/peterjames2019/Customer-Churn-Analysis/tree/main/notebooks" class="btn btn-secondary btn-sm px-3">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/projects/3.jpg" class="project-card-img bg-dark" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-dark">Data Science Job Market Insights</h5>
+                            <p class="text-muted small">A data-driven exploration of the modern DS landscape. I analyzed global roles to pinpoint peak compensation trends, the most in-demand technical skills, and the optimal intersection of innovation and high-tier salary growth.</p>
+                            
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="https://github.com/peterjames2019/Insights-On-The-Data-Science-Job-Market" class="btn btn-primary btn-sm px-3">Blog Post</a>
+                                <a href="https://github.com/peterjames2019/Insights-On-The-Data-Science-Job-Market/tree/main/project_sql" class="btn btn-secondary btn-sm px-3">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/projects/4.jpg" class="project-card-img bg-dark" alt="Project 4">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-dark">Online Retail Analysis</h5>
+                            <p class="text-muted small">This project involved a comprehensive analysis of an Online Retail dataset to move beyond basic sales reporting and into Data-Driven Marketing Strategy. By leveraging Python and Machine Learning, I transformed raw transactional data into actionable customer segments.</p>
+                            
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="https://github.com/peterjames2019/Online-Retail-Analysis" class="btn btn-primary btn-sm px-3">Blog Post</a>
+                                <a href="https://github.com/peterjames2019/Online-Retail-Analysis/blob/main/Customer_Segmentation_RFM_KMeans.py" class="btn btn-secondary btn-sm px-3">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-5">Skills</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border p-4">
+                        <img src="images/skills/1.png" class="skill-icon mx-auto" alt="Python Icon">
+                        <div class="card-body px-0 py-0">
+                            <h4 class="fw-bold mt-3">Excel</h4>
+                            <p class="text-muted small">
+                               Mastered advanced data manipulation using Pivot Tables, VLOOKUP/XLOOKUP, and complex formulas to clean and organize raw data. Through Alex The Analyst’s curriculum, I learned to transform messy spreadsheets into structured datasets ready for analysis and reporting.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=lH7HfwUFnYA&list=PLUaB-1hjhk8Hyd5NiPQ9CND82vNodlFF5" class="skill-link small">Link to Alex The Analyst Excel Series</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border p-4">
+                        <img src="images/skills/2.png" class="skill-icon mx-auto" alt="Data Visualization Icon">
+                        <div class="card-body px-0 py-0">
+                            <h4 class="fw-bold mt-3">Python</h4>
+                            <p class="text-muted small">
+                                Built a strong foundation in Python for data science, focusing on the Pandas and NumPy libraries for data cleaning and exploration. I’ve applied these skills to automate repetitive tasks and perform advanced statistical analysis, as demonstrated in my GitHub repositories.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=wUSDVGivd-8&list=PL_CkpxkuPiT8RuaFaR2hyxKKjqSTCL_yZ" class="skill-link small">Python for Data Analytics series by Luke Barousse</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border p-4">
+                        <img src="images/skills/3.png" class="skill-icon mx-auto" alt="SQL Icon">
+                        <div class="card-body px-0 py-0">
+                            <h4 class="fw-bold mt-3">SQL</h4>
+                            <p class="text-muted small">
+                                Proficient in writing complex queries to extract and analyze data from relational databases. I have experience with Joins, CTEs, Window Functions, and Data Cleaning directly within SQL, enabling me to handle large-scale datasets efficiently.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=7mz73uXD9DA&list=PL_CkpxkuPiT9s28QkBMvhaS4rVI9J2UG0" class="skill-link small">SQL for Data Analysis by Luke Barousse</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border p-4">
+                        <img src="images/skills/4.png" class="skill-icon mx-auto" alt="Data Storytelling Icon">
+                        <div class="card-body px-0 py-0">
+                            <h4 class="fw-bold mt-3">Tableau</h4>
+                            <p class="text-muted small">
+                                Specialized in creating interactive, high-impact visualizations that tell a story. By following Alex’s project-based tutorials, I learned how to build comprehensive dashboards that allow stakeholders to track KPIs and uncover business trends at a glance.
+                            </p>
+                            <a href="https://youtu.be/j8FSP8XuFyk?si=eHLIUUz9MYx6RaLX" class="skill-link small">Link to Alex The Analyst Tableau Series</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container text-center">
+            <h2 class="display-3 fw-bold mb-5">Contact Me</h2>
+
+            <div class="row justify-content-center contact-info mb-5">
+                <div class="col-auto d-flex align-items-center mb-3 mb-md-0">
+                    <span class="contact-icon">✉</span>
+                    <span>clipking19official@gmail.com</span>
+                </div>
+                <div class="col-auto d-flex align-items-center ms-md-5">
+                    <img src="icons/whatsapp.jpg" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 10px;">
+                    <span>+2348163203475</span>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                <a href="https://web.facebook.com/profile.php?id=100089189815644" class="col-6 col-md-2 social-link-item">
+                    <div class="social-circle">
+                        <img src="icons/1.png" alt="Twitter">
+                    </div>
+                    <p class="small">Facebook</p>
+                </a>
+                <a href="#" class="col-6 col-md-2 social-link-item">
+                    <div class="social-circle">
+                        <img src="icons/2.png" alt="GitHub">
+                    </div>
+                    <p class="small">GitHub</p>
+                </a>
+                <a href="https://www.linkedin.com/in/favour-peter-43b330263/" class="col-6 col-md-2 social-link-item">
+                    <div class="social-circle">
+                        <img src="icons/3.png" alt="Medium">
+                    </div>
+                    <p class="small">LinkedIn</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.min.js"></script>
+</body>
+</html>
